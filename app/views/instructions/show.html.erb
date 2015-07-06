@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Instruction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Instruction %></h1>
+</div>
 
-<p>
-  <strong>Project:</strong>
-  <%= @instruction.project %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:full_txt) %></dt>
+      <dd><pre class="prettyprint"><%= @instruction.full_txt %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:thumb_url) %></dt>
+      <dd><pre class="prettyprint"><%= @instruction.thumb_url %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_image) %></dt>
+      <dd><pre class="prettyprint"><%= @instruction.has_image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:position) %></dt>
+      <dd><pre class="prettyprint"><%= @instruction.position %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Full txt:</strong>
-  <%= @instruction.full_txt %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              instructions_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_instruction_path(@instruction), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              instruction_path(@instruction),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Thumb url:</strong>
-  <%= @instruction.thumb_url %>
-</p>
-
-<p>
-  <strong>Has image:</strong>
-  <%= @instruction.has_image %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @instruction.position %>
-</p>
-
-<%= link_to 'Edit', edit_instruction_path(@instruction) %> |
-<%= link_to 'Back', instructions_path %>

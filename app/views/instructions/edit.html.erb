@@ -1,6 +1,5 @@
-<h1>Editing instruction</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @instruction %> |
-<%= link_to 'Back', instructions_path %>
+<%- model_class = Instruction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Instruction %></h1>
+</div>
+<%= render :partial => 'form' %>
