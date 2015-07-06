@@ -1,33 +1,42 @@
-<h1>Listing materials</h1>
-
-<table>
+<%- model_class = Material -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Material %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Project</th>
-      <th>Object</th>
-      <th>Where to buy</th>
-      <th>Amount</th>
-      <th>Per student</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:object) %></th>
+      <th><%= model_class.human_attribute_name(:where_to_buy) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:per_student) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @materials.each do |material| %>
       <tr>
-        <td><%= material.project %></td>
+        <td><%= material.id %></td>
         <td><%= material.object %></td>
         <td><%= material.where_to_buy %></td>
         <td><%= material.amount %></td>
         <td><%= material.per_student %></td>
-        <td><%= link_to 'Show', material %></td>
-        <td><%= link_to 'Edit', edit_material_path(material) %></td>
-        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l material.created_at, format: :long %></td>
+        <td>
+          <%= link_to material_path(material), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to material_path(material), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Material', new_material_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_material_path,
+            :class => 'btn btn-primary' %>
