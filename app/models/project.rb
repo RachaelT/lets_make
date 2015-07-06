@@ -5,4 +5,5 @@ class Project < ActiveRecord::Base
   has_many :instructions
   validates_formatting_of :thumb_url, using: :url
   validates_formatting_of :author_url, using: :url
+  validates_formatting_of :video_url, using: :url
 end
