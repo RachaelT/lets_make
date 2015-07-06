@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :materials
+
   resources :instructions
 
   resources :blog_posts

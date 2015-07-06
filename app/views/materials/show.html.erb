@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @material.project %>
+</p>
+
+<p>
+  <strong>Object:</strong>
+  <%= @material.object %>
+</p>
+
+<p>
+  <strong>Where to buy:</strong>
+  <%= @material.where_to_buy %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @material.amount %>
+</p>
+
+<p>
+  <strong>Per student:</strong>
+  <%= @material.per_student %>
+</p>
+
+<%= link_to 'Edit', edit_material_path(@material) %> |
+<%= link_to 'Back', materials_path %>
