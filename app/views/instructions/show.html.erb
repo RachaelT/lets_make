@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @instruction.project %>
+</p>
+
+<p>
+  <strong>Full txt:</strong>
+  <%= @instruction.full_txt %>
+</p>
+
+<p>
+  <strong>Thumb url:</strong>
+  <%= @instruction.thumb_url %>
+</p>
+
+<p>
+  <strong>Has image:</strong>
+  <%= @instruction.has_image %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @instruction.position %>
+</p>
+
+<%= link_to 'Edit', edit_instruction_path(@instruction) %> |
+<%= link_to 'Back', instructions_path %>

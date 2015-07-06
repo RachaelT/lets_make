@@ -1,0 +1,15 @@
+<%= simple_form_for(@instruction) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :project %>
+    <%= f.input :full_txt %>
+    <%= f.input :thumb_url %>
+    <%= f.input :has_image %>
+    <%= f.input :position %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
