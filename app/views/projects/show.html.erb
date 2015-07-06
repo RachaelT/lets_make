@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Thumb url:</strong>
+  <%= @project.thumb_url %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @project.author %>
+</p>
+
+<p>
+  <strong>Author url:</strong>
+  <%= @project.author_url %>
+</p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @project.difficulty %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @project.length %>
+</p>
+
+<p>
+  <strong>How students work:</strong>
+  <%= @project.how_students_work %>
+</p>
+
+<p>
+  <strong>Cost per student:</strong>
+  <%= @project.cost_per_student %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user %>
+</p>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @project.video_url %>
+</p>
+
+<p>
+  <strong>Skills:</strong>
+  <%= @project.skills %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @project.category %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

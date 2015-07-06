@@ -1,0 +1,22 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :thumb_url %>
+    <%= f.input :author %>
+    <%= f.input :author_url %>
+    <%= f.input :difficulty %>
+    <%= f.input :length %>
+    <%= f.input :how_students_work %>
+    <%= f.input :cost_per_student %>
+    <%= f.association :user %>
+    <%= f.input :video_url %>
+    <%= f.input :skills %>
+    <%= f.input :category %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

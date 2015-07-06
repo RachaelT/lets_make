@@ -1,0 +1,47 @@
+<h1>Listing projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Thumb url</th>
+      <th>Author</th>
+      <th>Author url</th>
+      <th>Difficulty</th>
+      <th>Length</th>
+      <th>How students work</th>
+      <th>Cost per student</th>
+      <th>User</th>
+      <th>Video url</th>
+      <th>Skills</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project.thumb_url %></td>
+        <td><%= project.author %></td>
+        <td><%= project.author_url %></td>
+        <td><%= project.difficulty %></td>
+        <td><%= project.length %></td>
+        <td><%= project.how_students_work %></td>
+        <td><%= project.cost_per_student %></td>
+        <td><%= project.user %></td>
+        <td><%= project.video_url %></td>
+        <td><%= project.skills %></td>
+        <td><%= project.category %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>
