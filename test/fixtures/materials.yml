@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 
+  object: MyString
+  where_to_buy: MyString
+  amount: 1.5
+  per_student: false
+
+two:
+  project_id: 
+  object: MyString
+  where_to_buy: MyString
+  amount: 1.5
+  per_student: false
